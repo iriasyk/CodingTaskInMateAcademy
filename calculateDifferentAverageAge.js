@@ -112,15 +112,15 @@ function calculateAverageAgeDiff(people, onlyWithSon) {
                 })
         });
 
-    const womenOnlyWithDaughter = womenFromPeopleList.map(w => w)
+    const ObjWomenOnlyWithDaughter = womenFromPeopleList.map(w => w)
         .filter(function (women) {
             return matchingKey.some(function (nameDaughter) {
                 return women.name === nameDaughter; // creating an object with moms who have daughter
             })
         });
-    console.log('womenOnlyWithDaughter', womenOnlyWithDaughter);
+    console.log('womenOnlyWithDaughter', ObjWomenOnlyWithDaughter);
 
-    const yearBornWomenOnlyWithDaughter = womenOnlyWithDaughter.map(w => w.born); // array age women with daughter
+    const yearBornWomenOnlyWithDaughter = ObjWomenOnlyWithDaughter.map(w => w.born); // array age women with daughter
     console.log('yearBornWomenOnlyWithDaughter', yearBornWomenOnlyWithDaughter);
 
     const arrWomenOnlyWithSon = menFromPeopleList.map(m => m.mother); // array of women who have sons
